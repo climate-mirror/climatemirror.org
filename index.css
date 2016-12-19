@@ -1,0 +1,21 @@
+.panel{
+    background-color: #fff;
+    padding: 0em 1em;
+    opacity: .75;
+}
+
+#header{
+    text-shadow: -1px -1px 0 #ddd,
+                1px -1px 0 #ddd,
+                -1px 1px 0 #ddd,
+                 1px 1px 0 #ddd;
+
+    color: #111;
+    letter-spacing: .25em;
+    /* simulates a white text stroke in all browsers */
+}
+
+body{
+    background-image: url("./background_nasa_1600_black50_blur.jpg");
+    background-size: cover;
+}
