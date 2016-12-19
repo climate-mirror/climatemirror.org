@@ -1,18 +1,20 @@
 .panel{
     background-color: #fff;
-    padding: 0em 1em;
+    padding: 0 1em;
     opacity: .75;
+    margin: 1em 5%;
 }
 
 #header{
-    text-shadow: -1px -1px 0 #ddd,
-                1px -1px 0 #ddd,
-                -1px 1px 0 #ddd,
-                 1px 1px 0 #ddd;
+    text-shadow: -1px -1px 0 #444,
+                1px -1px 0 #444,
+                -1px 1px 0 #444,
+                 1px 1px 0 #444;
+    /* simulates a light text stroke in all browsers */
 
-    color: #111;
+    color: #ddd;
     letter-spacing: .25em;
-    /* simulates a white text stroke in all browsers */
+    margin-left: 5%;
 }
 
 body{
