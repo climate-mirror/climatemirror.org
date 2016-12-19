@@ -17,6 +17,10 @@
     margin-left: 5%;
 }
 
+#header h1{
+    margin-bottom: 0;
+}
+
 body{
     background-image: url("./background_nasa_1600_black50_blur.jpg");
     background-size: cover;
