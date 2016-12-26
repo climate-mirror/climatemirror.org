@@ -1,9 +1,3 @@
-/*
- * Start Bootstrap - Landing Page (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
-
 body {
     position: relative;
 }
@@ -23,10 +17,6 @@ h5,
 h6 {
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
-}
-
-.topnav {
-    font-size: 14px;
 }
 
 .lead {
@@ -55,12 +45,6 @@ h6 {
     font-size: 5em;
 }
 
-.intro-divider {
-    width: 400px;
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
 .intro-message > h3 {
     /*text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);*/
 }
@@ -84,16 +68,6 @@ h6 {
         margin-bottom: 0;
     }
 
-    .intro-divider {
-        width: 100%;
-    }
-}
-
-.network-name {
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 2px;
 }
 
 .content-section-a {
@@ -117,13 +91,6 @@ h6 {
     border-top: 3px solid #e7e7e7;
 }
 
-.banner {
-    padding: 100px 0;
-    color: #f8f8f8;
-    background: url(../img/banner-bg.jpg) no-repeat center center;
-    background-size: cover;
-}
-
 .banner h2 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
@@ -134,16 +101,7 @@ h6 {
     margin-bottom: 0;
 }
 
-.banner-social-buttons {
-    float: right;
-    margin-top: 0;
-}
-
 @media (max-width: 1199px) {
-    ul.banner-social-buttons {
-        float: left;
-        margin-top: 15px;
-    }
 }
 
 @media (max-width: 767px) {
