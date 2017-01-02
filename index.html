@@ -1,82 +1,375 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<title>Climate Mirror - A Volunteer Effort to Mirror U.S. Federal Climate Data</title>
-	<meta name="description" content="Mirroring US Government Climate Datasets to ensure data remains available." />
-	<link rel="stylesheet" href="pure-0.6.1.css" />
-	<!--[if lte IE 8]>
-		<link rel="stylesheet" href="./pure-grids-old-ie-responsive-min.css">
-	<![endif]-->
-    <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="./pure-grids-responsive-min.css">
-    <!--<![endif]-->
-	<link rel="stylesheet" href="./index.css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Climate Mirror | A Volunteer Effort to Mirror U.S. Federal Climate Data</title>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+          integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link href="css/index.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700%7CLato:300i,400,400i,700,700i"
+          rel="stylesheet">
+
+    <script>
+        function css(element, property) {
+            return window.getComputedStyle(element, null).getPropertyValue(property);
+        }
+
+        window.onload = function () {
+            var span = document.createElement('span');
+
+            span.className = 'fa';
+            span.style.display = 'none';
+            document.body.insertBefore(span, document.body.firstChild);
+
+            if ((css(span, 'font-family')) !== 'FontAwesome') {
+                document.write('<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" \/>')
+            }
+            document.body.removeChild(span);
+        };
+    </script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script>
+        !window.html5 && document.write('<script src="js/html5shiv.min.js"><\/script>');
+        !window.respond && document.write('<script src="js/respond.min.js"><\/script>')
+    </script>
+    <![endif]-->
+
 </head>
 
-<body>
-	<!-- I'm using a few cheap hacks here - feel free to rearrange and do it right if you want to rework the design a bit -->
-	<div class="pure-g">
-		<div class="pure-u-1" id="header"><h1>Climate Mirror</h1></div>
-		<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-5 panel">
-			<h2>Mirrors</h2>
-			<p>Climate Mirror is a distributed effort conducted by volunteers, in conjunction with efforts from institutions such as University of Pennsylvania, University of Toronto, and the Internet Archive.</p>
-			<p>The following sites are known to host mirrors of climate data:</p>
-				<ul>
-					<li><a href="http://climate.daknob.net">climate.daknob.net</a> - includes a list of known mirrored datasets from volunteers</li>
-					<li><a href="http://climatetorrents.com">climatetorrents.com</a></li>
-					<li><a href="ftp://paleo.climatemirror.org">paleo.climatemirror.org</a></li>
-				</ul>
+<body data-spy="scroll" data-target="#collapsingNavbar" data-offset="51">
 
-			<h2>Partners</h2>
-			<ul>
-				<li><a href="http://www.ppehlab.org/datarefuge">The PPEH Lab at the University of Pennsylvania</a> runs the #DataRefuge project. The team there includes professional archivists and researchers, who are organizing efforts and working with the volunteers to standardize our approach to making backups and live mirrors.</li>
-				<li><a href="https://www.envirodatagov.org/">The Environmental Data and Governance Initiative</a></li>
-				<li>We are also aware of and working in coordination with more established players in government data archiving, such as the Internet Archive and California Digital Library's <a href="https://blog.archive.org/2016/12/15/preserving-u-s-government-websites-and-data-as-the-obama-term-ends/">End of Term Project</a>.</li>
-			</ul>
-		</div>
-       <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-5 panel">
-			<h2>Get Involved</h2>
-			<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSc0C7eQySKrDvDtFKAFUEwRNx6-tPueCqZMZzMhMit-XN653A/viewform?fbzx=9073326658345900000" class="pure-button pure-button-primary">Click Here to Get Involved</a></p>
-			<p>If you have server space and want to start mirroring data, take a look at the <a href="https://docs.google.com/spreadsheets/d/12-__RqTqQxuxHNOln3H5ciVztsDMJcZ2SVs1BrfqYCc/edit#gid=0">Google Doc</a>
-				and claim a dataset by filling in <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0C7eQySKrDvDtFKAFUEwRNx6-tPueCqZMZzMhMit-XN653A/viewform?fbzx=9073326658345900000">the appropriate part of this form</a>.</p>
-			<p>If you want to get even more plugged into coordinating this effort, <a href="http://nicksantos.com/about-and-contact/">contact me</a> and I'll add you to a Slack team for this effort.</p
 
-		   	<h2>Scientists</h2>
-			   <p>The #DataRefuge Project needs your input. Which datasets are valuable and vulnerable? <a href="http://www.ppehlab.org/datarefugesurvey">Please take a look at this and provide input</a> before December 30th, 2016.</p>
+<!--Navigation-->
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <a class="navbar-brand float-left" href="#"><img src="img/icon.png" height="32" width="32"/> Climate Mirror</a>
+    <button class="navbar-toggler pull-right hidden-md-up" type="button" data-toggle="collapse"
+            data-target="#collapsingNavbar"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div id="collapsingNavbar" class="pull-right collapse navbar-toggleable-sm">
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#intro">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">ABOUT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#mirrors">MIRRORS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#donate">DONATE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#help">HELP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">CONTACT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#partners">PARTNERS</a>
+            </li>
+        </ul>
+    </div>
+    <!--/#collapsingNavbar-->
+</nav>
 
-			<h2>Donations</h2>
-			<p>First, thank you! Hold onto your cash for right now - there may be a method for you to support the effort financially soon.</p>
+<!-- Header -->
+<section id="intro" class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <h1>Climate Mirror</h1>
+                    <h3>an ad-hoc project to mirror public climate datasets before the Trump Administration takes
+                        office</h3>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.intro-header -->
 
-		   <h2>Tools</h2>
-		   <p>The <a href="https://github.com/guerrilla-archiving">University of Toronto has a GitHub organization</a> with some tools you might find useful for mirroring data in an archivable format.</p>
+<!-- Page Content -->
 
-		   <p>The Internet Archive also offers <a href="https://github.com/internetarchive/brozzler">Brozzler</a> as a tool for crawling and archiving sites.</p>
+<section id="about" class="content-section-a">
 
-		</div>
-		<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-5 panel">
-			<h2>Contributing a Mirror and Editing this Site</h2>
-			<p>This site is <a href="https://github.com/nickrsan/climatemirror.org/">a GitHub repository</a>. If you've already
-				<a href="https://docs.google.com/forms/d/e/1FAIpQLSc0C7eQySKrDvDtFKAFUEwRNx6-tPueCqZMZzMhMit-XN653A/viewform?fbzx=9073326658345900000">filled out the form</a>
-				indicating you've finished mirroring a data repository, feel free to submit a Pull Request on GitHub with your changes (or get in touch on Slack) and we'll make the
-				necessary changes to the site.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">About Us</h2>
+                <p class="lead">Climate Mirror is a distributed effort conducted by volunteers, in conjunction with
+                    efforts from institutions such as University of Pennsylvania, University of Toronto, and the
+                    Internet Archive, to mirror and back up U.S. Federal Climate Data before the Trump Administration
+                    takes office.</p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6 pull-right">
+                <img class="img-fluid rounded" src="img/us.jpg" alt="The United States at night, from space.">
+            </div>
+        </div>
 
-			<h2>About This Site</h2>
-			<p>Climate Mirror is part of an ad-hoc project to mirror public climate datasets <a href="https://www.washingtonpost.com/news/energy-environment/wp/2016/12/13/scientists-are-frantically-copying-u-s-climate-data-fearing-it-might-vanish-under-trump/?utm_term=.fde03c8c8d0c">before the Trump Administration takes office</a> to make sure these datasets remain freely and broadly accessible. It was kicked off by <a href="https://twitter.com/EricHolthaus/status/807802801506041856">a tweet from journalist Eric Holthaus</a>, and similar efforts were started independently at the University of Toronto and University of Pennsylvania.</p>
-			<p>This page created by <a href="https://nicksantos.com">Nick Santos</a></p>
-		</div>
-	</div>
+    </div>
+    <!-- /.container -->
 
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+</section>
+<!-- /.content-section-a -->
 
-	  ga('create', 'UA-89270713-1', 'auto');
-	  ga('send', 'pageview');
+<section id="mirrors" class="content-section-b">
 
-	</script>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+                <img class="img-fluid" src="img/earth.png" alt="">
+            </div>
+            <div class="col-lg-5 col-lg-offset-1 pull-right col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Mirrors</h2>
+                <p class="lead">Our goal is to make store the data redundantly across the world. To see our current
+                    mirrors, visit
+                    <a href="https://climate.daknob.net/" target="_blank">climate.daknob.net</a>. We also have several
+                    torrents that you can use to both retrieve data and assist in maintaining them.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
 
+</section>
+<!-- /.content-section-b -->
+
+<section id="donate" class="content-section-a">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Donate</h2>
+                <p class="lead">First, thank you! Hold onto your cash for right now - there may be a method for you to
+                    support the effort financially soon.</p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6 pull-right">
+                <img class="img-fluid rounded" src="img/thanks.jpg" alt="Thanks for your interest!">
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.content-section-a -->
+
+<section id="help" class="content-section-b">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+                <img class="img-fluid rounded" src="img/heart.jpg">
+            </div>
+            <div class="col-lg-5 col-lg-offset-1 pull-right col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Help Us</h2>
+                <p class="lead">If you have server space and want to start mirroring data, <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSc0C7eQySKrDvDtFKAFUEwRNx6-tPueCqZMZzMhMit-XN653A/viewform?fbzx=9073326658345900000"
+                        target="_blank">take a look at the Google Doc</a> and claim a dataset by filling in the
+                    appropriate part of this form. If you want to get even more plugged into coordinating this effort,
+                    contact us and we will add you to a Slack team for this effort.
+                </p>
+                <h4>Scientists</h4>
+                <p class="lead">
+                    The #DataRefuge Project needs your input. Which datasets are valuable and vulnerable?
+                    <a href="https://www.ppehlab.org/datarefugesurvey" target="_blank">Please take a look at this</a>
+                    and provide input before December 30th, 2016.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</section>
+<!--/.content-section-b-->
+
+<section id="contact" class="content-section-a">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Contact Us</h2>
+                <p class="lead">If you are interested in joining or helping us, contact Nick Santos on his website, <a
+                        href="http://nicksantos.com/about-and-contact/" target="_blank">http://nicksantos.com/about-and-contact/</a>.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <!--/.container-->
+</section>
+<!-- /.content-section-a -->
+
+<section id="partners" class="content-section-b">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Partners</h2>
+                <p class="lead">We partner with some amazing people and organizations who help us achieve our goals.</p>
+            </div>
+        </div>
+        <!--<div class="card-deck-wrapper">-->
+        <!--<div class="card-deck">-->
+        <div class="row">
+            <div class="col-lg-12 col-xs-12">
+                <div class="card-columns">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">The Environmental Data and Governance Initiative</h4>
+                            <p class="card-text">The Environmental Data and Governance Initiative is creating the
+                                networked
+                                capacity to host data that may be endangered by an overtly anti-science
+                                administration.</p>
+                            <a href="https://envirodatagov.org/" target="_blank" class="card-link">Visit</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">The PPEH Lab</h4>
+                            <p class="card-text">The PPEH Lab at the University of Pennsylvania runs the #DataRefuge
+                                project. The team there includes professional archivists and researchers, who are
+                                organizing
+                                efforts and working with the volunteers to standardize our approach to making backups
+                                and
+                                live mirrors.</p>
+                            <a href="https://www.ppehlab.org/datarefuge" target="_blank" class="card-link">Visit</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">Internet Archive</h4>
+                            <p class="card-text">Internet Archive is a non-profit library of millions of free books,
+                                movies,
+                                software, music, websites, and more. Its purposes include offering permanent access for
+                                researchers, historians, scholars, people with disabilities, and the general public to
+                                historical collections that exist in digital format.</p>
+                            <a href="https://archive.org/" target="_blank" class="card-link">Visit</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">The End of Term Web Archive</h4>
+                            <p class="card-text">The End of Term Web Archive captures and saves U.S. Government websites
+                                at the
+                                end of presidential administrations. Beginning in 2008, the EOT has thus far preserved
+                                websites
+                                from administration changes in 2008 and 2012, and is currently preparing for the 2016
+                                electoral
+                                season.</p>
+                            <a href="http://eotarchive.cdlib.org/" target="_blank" class="card-link">Visit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+    <!-- /.container -->
+
+</section>
+<!-- /.content-section-b -->
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="flex-list">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="#intro">Home</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#mirrors">Mirrors</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#donate">Donate</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#help">Help</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#contact">Contact</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#partners">Partners</a>
+                        </li>
+                    </ul>
+                </div>
+                <p class="copyright text-muted small">Copyright &copy; Climate Mirror 2016. All Rights Reserved. Made
+                    with <i class="fa fa-heart"></i> by <a href="mailto:meyerzinn@gmail.com">Meyer Zinn</a>.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+        integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB"
+        crossorigin="anonymous"></script>
+<script>!window.$ && document.write('<script src="js/jquery.js"><\/script>')</script>
+
+<script>
+    // Check to make sure bootstrap is loaded.
+    $(document).ready(function () {
+        var $span = $('<span class="bs hidden-xs-up"></span>');
+        var $bs = $('body').append($span).find('.bs');
+
+        if ($bs.css('display') !== 'none') {
+            $("head").append('<link rel="stylesheet" href="css/bootstrap.min.css">');
+        }
+        $bs.remove();
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/tether/1.3.7/tether.min.js"
+        integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8"
+        crossorigin="anonymous"></script>
+<script>!window.Tether && document.write('<script src="js/tether.js"><\/script>')</script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+        integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
+        crossorigin="anonymous"></script>
+<script>($().emulateTransitionEnd == undefined || (typeof $().emulateTransitionEnd != 'function')) && document.write('<script src="js/bootstrap.min.js"><\/script>')</script>
 </body>
 </html>
